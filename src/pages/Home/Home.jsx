@@ -1,9 +1,10 @@
 import React from 'react';
+import MissionSlider from './MissionSlider';
 
 function Home() {
   return (
     <div>
-      this is home
+      <MissionSlider></MissionSlider>
     </div>
   );
 }
