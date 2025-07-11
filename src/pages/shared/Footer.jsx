@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 function Footer() {
   return (
-    <footer className="bg-[#FF8C42] text-black text-[14px] px-16 py-14">
+    <footer className="bg-orange-200 text-black text-[14px] px-16 py-14">
       <div className="max-w-7xl mx-auto flex flex-col gap-8 md:flex-row justify-between">
         <div>
           <h1 className="text-3xl font-bold mb-3">FoodLink</h1>

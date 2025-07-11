@@ -5,9 +5,9 @@ import FoodLinkLogo from "../pages/shared/FoodLinkLogo";
 
 function AuthLayout() {
   return (
-    <div className="bg-white flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="flex flex-col lg:flex-row-reverse w-full overflow-hidden">
-        <div className="bg-[#FAFDF0] flex-1 flex items-center justify-center p-4">
+        <div className="flex-1 flex items-center justify-center p-4">
           <img
             src={auth}
             alt="Authentication Illustration"

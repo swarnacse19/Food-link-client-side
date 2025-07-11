@@ -2,6 +2,7 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 function SocialLogin() {
   const { signInWithGoogle } = useAuth();
@@ -12,7 +13,8 @@ function SocialLogin() {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        navigate(`${location.state ? location.state : "/"}`);
+        toast.success("Sign up with Google Successfully!");
+        setTimeout(() => navigate(`${location.state ? location.state : "/"}`), 3000);
       })
       .catch((error) => {
         console.log(error.message);
