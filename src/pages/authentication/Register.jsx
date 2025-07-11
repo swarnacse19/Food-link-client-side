@@ -8,11 +8,11 @@ import useAxios from "../../hooks/useAxios";
 import useAuth from "../../hooks/useAuth";
 
 function Register() {
-    const { createUser, updateUserProfile } = useAuth();
-    const [profilePic, setProfilePic] = useState("");
-    const axiosInstance = useAxios();
-    const navigate = useNavigate();
-    const location = useLocation();
+  const { createUser, updateUserProfile } = useAuth();
+  const [profilePic, setProfilePic] = useState("");
+  const axiosInstance = useAxios();
+  const navigate = useNavigate();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -48,8 +48,11 @@ function Register() {
           .catch((error) => {
             console.log(error);
           });
-          toast.success("Registration successful!");
-        navigate(`${location.state ? location.state : "/"}`);
+        toast.success("Registration successful!");
+        setTimeout(
+          () => navigate(`${location.state ? location.state : "/"}`),
+          3000
+        );
       })
       .catch((error) => {
         console.log(error.message);

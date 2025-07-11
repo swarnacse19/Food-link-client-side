@@ -13,7 +13,7 @@ function SocialLogin() {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        toast.success("Sign up with Google Successfully!");
+        toast.success("Continue with Google Successfully!");
         setTimeout(() => navigate(`${location.state ? location.state : "/"}`), 3000);
       })
       .catch((error) => {

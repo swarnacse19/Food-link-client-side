@@ -22,10 +22,10 @@ function Navbar() {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/services">All Donations</NavLink>
+        <NavLink to="/allDonations">All Donations</NavLink>
       </li>
       <li>
-        <NavLink to="/coverage">Dashboard</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
     </>
   );
@@ -61,7 +61,7 @@ function Navbar() {
       </div>
       <div className="navbar-end">
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal mr-3">{navItems}</ul>
+          <ul className="menu menu-horizontal px-3">{navItems}</ul>
         </div>
         {user ? (
           <>

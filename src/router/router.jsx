@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/authentication/Login";
 import Register from "../pages/authentication/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import PrivateRoute from "../routes/PrivateRoute";
+import AllDonations from "../pages/AllDonations/AllDonations";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +15,12 @@ export const router = createBrowserRouter([
         {
             index: true,
             Component: Home
+        },
+        {
+          path: "allDonations",
+          element: <PrivateRoute>
+            <AllDonations></AllDonations>
+          </PrivateRoute>
         }
     ]
   },
