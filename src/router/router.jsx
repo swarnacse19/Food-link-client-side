@@ -6,6 +6,8 @@ import Register from "../pages/authentication/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "../routes/PrivateRoute";
 import AllDonations from "../pages/AllDonations/AllDonations";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Forbidden from "../pages/Forbidden";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +17,10 @@ export const router = createBrowserRouter([
         {
             index: true,
             Component: Home
+        },
+        {
+          path: "forbidden",
+          Component: Forbidden
         },
         {
           path: "allDonations",
@@ -38,4 +44,16 @@ export const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path: "/dashboard",
+    element: <PrivateRoute>
+      <DashboardLayout></DashboardLayout>
+    </PrivateRoute>,
+    children: [
+      // {
+      //   path: 'makeAdmin',
+      //   element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
+      // }
+    ]
+  }
 ]);
