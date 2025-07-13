@@ -9,6 +9,7 @@ import AllDonations from "../pages/AllDonations/AllDonations";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Forbidden from "../pages/Forbidden";
 import Profile from "../pages/Dashboard/Profile";
+import ManageUsers from "../pages/Dashboard/AdminAccess/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         Component: Profile
+      },
+      {
+        path: "manage-users",
+        Component: ManageUsers
       },
       // {
       //   path: 'makeAdmin',

@@ -4,6 +4,7 @@ import useUserRole from "../../hooks/useUserRole";
 
 const Profile = () => {
   const { user } = useAuth(); 
+  console.log(user);
   const { role } = useUserRole();
 
   const showRole = role !== "user";

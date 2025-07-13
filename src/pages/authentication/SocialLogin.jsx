@@ -15,7 +15,7 @@ function SocialLogin() {
   signInWithGoogle()
     .then(async (result) => {
       const loggedInUser = result.user;
-      console.log(loggedInUser);
+      console.log(loggedInUser.uid);
 
       const userInfo = {
         email: loggedInUser.email,
@@ -23,6 +23,7 @@ function SocialLogin() {
         created_at: new Date().toISOString(),
         name: loggedInUser.displayName,
         photo: loggedInUser.photoURL,
+        firebaseUid: loggedInUser.uid,
       };
 
       try {

@@ -32,6 +32,7 @@ function Register() {
           created_at: new Date().toISOString(),
           name: data.name,
           photo: profilePic,
+          firebaseUid: result.user.uid,
         };
 
         const userRes = await axiosInstance.post("/users", userInfo);
