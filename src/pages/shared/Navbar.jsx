@@ -79,7 +79,7 @@ function Navbar() {
             {/* User Name */}
             {user.displayName && (
               <span className="text-xl mr-3 font-medium">
-                {user.displayName}
+                {user.displayName.split(" ")[0]}
               </span>
             )}
             <button

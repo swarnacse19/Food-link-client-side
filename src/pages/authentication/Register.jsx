@@ -23,18 +23,19 @@ function Register() {
     //console.log(data);
     createUser(data.email, data.password)
       .then(async (result) => {
-        console.log(result.user);
+        //console.log(result.user);
 
         // update userinfo in the database
-        // const userInfo = {
-        //   email: data.email,
-        //   role: "user", // default role
-        //   created_at: new Date().toISOString(),
-        //   last_log_in: new Date().toISOString(),
-        // };
+        const userInfo = {
+          email: data.email,
+          role: "user", // default role
+          created_at: new Date().toISOString(),
+          name: data.name,
+          photo: profilePic,
+        };
 
-        // const userRes = await axiosInstance.post("/users", userInfo);
-        // console.log(userRes.data);
+        const userRes = await axiosInstance.post("/users", userInfo);
+        console.log(userRes.data);
 
         // update user profile in firebase
         const userProfile = {
@@ -61,17 +62,17 @@ function Register() {
 
   const handleImageUpload = async (e) => {
     const image = e.target.files[0];
-    console.log(image);
+    //console.log(image);
 
-    // const formData = new FormData();
-    // formData.append("image", image);
+    const formData = new FormData();
+    formData.append("image", image);
 
-    // const imagUploadUrl = `https://api.imgbb.com/1/upload?key=${
-    //   import.meta.env.VITE_image_upload_key
-    // }`;
-    // const res = await axios.post(imagUploadUrl, formData);
+    const imagUploadUrl = `https://api.imgbb.com/1/upload?key=${
+      import.meta.env.VITE_image_upload_key
+    }`;
+    const res = await axios.post(imagUploadUrl, formData);
 
-    // setProfilePic(res.data.data.url);
+    setProfilePic(res.data.data.url);
   };
 
   return (
@@ -96,10 +97,15 @@ function Register() {
           <label className="label">Email</label>
           <input
             type="email"
-            {...register("email")}
+            {...register("email", {
+              required: true,
+            })}
             className="input"
             placeholder="Email"
           />
+          {errors.email?.type === "required" && (
+            <p className="text-red-500">This email field is required</p>
+          )}
           <label className="label">Password</label>
           <input
             type="password"
