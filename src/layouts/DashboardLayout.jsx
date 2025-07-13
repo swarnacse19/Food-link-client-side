@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink, Outlet } from "react-router";
 import {
   FaHome,
@@ -10,6 +11,7 @@ import {
   FaMoneyCheckAlt,
   FaBoxOpen,
   FaUserEdit,
+  FaUserCheck,
 } from "react-icons/fa";
 import useUserRole from "../hooks/useUserRole";
 import FoodLinkLogo from "../pages/shared/FoodLinkLogo";

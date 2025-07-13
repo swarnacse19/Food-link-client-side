@@ -8,6 +8,7 @@ import PrivateRoute from "../routes/PrivateRoute";
 import AllDonations from "../pages/AllDonations/AllDonations";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Forbidden from "../pages/Forbidden";
+import Profile from "../pages/Dashboard/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       <DashboardLayout></DashboardLayout>
     </PrivateRoute>,
     children: [
+      {
+        path: "profile",
+        Component: Profile
+      },
       // {
       //   path: 'makeAdmin',
       //   element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
