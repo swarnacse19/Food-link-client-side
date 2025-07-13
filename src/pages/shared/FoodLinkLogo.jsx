@@ -7,7 +7,7 @@ function FoodLinkLogo() {
     <Link>
       <div className="flex items-center">
         <img className="w-8" src={fork} alt="" />
-        <h1 className="text-3xl hidden md:flex text-[#FF8C42] font-bold">FoodLink</h1>
+        <h1 className="text-3xl text-[#FF8C42] font-bold">FoodLink</h1>
       </div>
     </Link>
   );

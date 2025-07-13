@@ -9,37 +9,41 @@ import {
   FaStar,
   FaMoneyCheckAlt,
   FaBoxOpen,
+  FaUserEdit,
 } from "react-icons/fa";
 import useUserRole from "../hooks/useUserRole";
+import FoodLinkLogo from "../pages/shared/FoodLinkLogo";
 
 const DashboardLayout = () => {
   const { role, roleLoading } = useUserRole();
 
   return (
     <div className="drawer lg:drawer-open">
-      <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
+      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        <div className="navbar bg-base-200 lg:hidden">
-          <label
-            htmlFor="dashboard-drawer"
-            className="btn btn-ghost btn-square"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+        <div className="navbar bg-base-200 w-full lg:hidden">
+          <div className="flex-none ">
+            <label
+              htmlFor="my-drawer-2"
+              aria-label="open sidebar"
+              className="btn btn-square btn-ghost"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </label>
-          <div className="ml-2 text-xl font-bold">Dashboard</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="inline-block h-6 w-6 stroke-current"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </label>
+          </div>
+          <div className="mx-2 flex-1 px-2 lg:hidden">Dashboard</div>
         </div>
 
         <div className="p-4">
@@ -48,8 +52,15 @@ const DashboardLayout = () => {
       </div>
 
       <div className="drawer-side">
-        <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 bg-base-100 text-base-content space-y-2">
+        <label
+          htmlFor="my-drawer-2"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+        <li className="mb-3">
+            <FoodLinkLogo></FoodLinkLogo>
+        </li>
           <li>
             <NavLink to="/">
               <FaHome className="mr-2" />
