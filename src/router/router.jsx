@@ -17,6 +17,7 @@ import AddDonation from "../pages/Dashboard/RestaurantAccess/AddDonation";
 import MyDonations from "../pages/Dashboard/RestaurantAccess/MyDonations";
 import EditDonation from "../pages/Dashboard/RestaurantAccess/EditDonation";
 import DonationStats from "../pages/Dashboard/RestaurantAccess/DonationStats";
+import ManageDonations from "../pages/Dashboard/AdminAccess/ManageDonations";
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +68,12 @@ export const router = createBrowserRouter([
         path: "manage-users",
         element: <AdminRoute>
           <ManageUsers></ManageUsers>
+        </AdminRoute>
+      },
+      {
+        path: "manage-donations",
+        element: <AdminRoute>
+          <ManageDonations></ManageDonations>
         </AdminRoute>
       },
       {
