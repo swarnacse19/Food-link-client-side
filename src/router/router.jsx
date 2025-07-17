@@ -12,6 +12,8 @@ import Profile from "../pages/Dashboard/Profile";
 import ManageUsers from "../pages/Dashboard/AdminAccess/ManageUsers";
 import AdminRoute from "../routes/AdminRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import RestaurantRoute from "../routes/RestaurantRoute";
+import AddDonation from "../pages/Dashboard/RestaurantAccess/AddDonation";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +66,12 @@ export const router = createBrowserRouter([
           <ManageUsers></ManageUsers>
         </AdminRoute>
       },
+      {
+        path: "add-donation",
+        element: <RestaurantRoute>
+          <AddDonation></AddDonation>
+        </RestaurantRoute>
+      }
     ]
   },
   {
