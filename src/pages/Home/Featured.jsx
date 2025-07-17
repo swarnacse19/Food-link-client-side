@@ -14,7 +14,7 @@ const Featured = () => {
   });
 
   return (
-    <section className="my-16 px-4">
+    <section className="my-16 px-4 max-w-11/12 mx-auto">
       <h2 className="text-3xl font-bold mb-9 text-center"> Featured Donations</h2>
       {isLoading ? (
         <Loading></Loading>
