@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
 import useAuth from "../../../hooks/useAuth";
@@ -31,8 +31,9 @@ function CharityPaymentForm({ formData }) {
       });
 
       if (cardError) {
-        setError(cardError.message);
-        toast.error(cardError.message);
+        const message = cardError.message;
+        setError(message);
+        toast.error(message);
         return;
       }
 
@@ -50,8 +51,9 @@ function CharityPaymentForm({ formData }) {
       });
 
       if (result.error) {
-        setError(result.error.message);
-        toast.error(result.error.message);
+        const message = result.error.message;
+        setError(message);
+        toast.error(message);
         return;
       }
 
@@ -78,25 +80,32 @@ function CharityPaymentForm({ formData }) {
       }
     } catch (err) {
       console.error(err);
-      toast.error("Something went wrong while processing payment.");
+      const message = err?.message || "Something went wrong while processing payment.";
+      setError(message);
+      toast.error(message);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-4 bg-white p-6 rounded-xl shadow-md w-full max-w-md mx-auto"
-    >
-      <CardElement className="p-2 border rounded" />
-      <button
-        type="submit"
-        className="btn w-full font-semibold bg-[#CAEB66]"
-        disabled={!stripe}
+    <>
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4 bg-white p-6 rounded-xl shadow-md w-full max-w-md mx-auto"
       >
-        Pay $25
-      </button>
-      {error && <p className="text-red-500">{error}</p>}
-    </form>
+        <CardElement className="p-2 border rounded" />
+        <button
+          type="submit"
+          className="btn w-full font-semibold bg-orange-400"
+          disabled={!stripe}
+        >
+          Pay $25
+        </button>
+        {/* {error && <p className="text-red-500">{error}</p>} */}
+      </form>
+
+      {/* Toast container to display error/success messages */}
+      <ToastContainer position="top-right" autoClose={5000} />
+    </>
   );
 }
 
