@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
 import {
   createUserWithEmailAndPassword,
+  getIdToken,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -10,30 +11,40 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../firebase/firebase.init";
+import { useQueryClient } from "@tanstack/react-query";
 
 const provider = new GoogleAuthProvider();
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
 
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const signIn = (email, password) => {
+  const signIn = async(email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
+    const result = await signInWithEmailAndPassword(auth, email, password);
+    const token = await getIdToken(auth.currentUser, true);
+    localStorage.setItem("accessToken", token);
+    return result;
   };
 
-  const signInWithGoogle = () => {
+  const signInWithGoogle = async() => {
     setLoading(true);
-    return signInWithPopup(auth, provider);
+    const result = await signInWithPopup(auth, provider);
+    const token = await getIdToken(auth.currentUser, true);
+    localStorage.setItem("accessToken", token);
+    return result;
   };
 
   const logout = () => {
     setLoading(true);
+    localStorage.removeItem("accessToken");
+    queryClient.clear();
     return signOut(auth);
   };
 

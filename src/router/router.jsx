@@ -10,6 +10,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Forbidden from "../pages/Forbidden";
 import Profile from "../pages/Dashboard/Profile";
 import ManageUsers from "../pages/Dashboard/AdminAccess/ManageUsers";
+import AdminRoute from "../routes/AdminRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -58,12 +60,18 @@ export const router = createBrowserRouter([
       },
       {
         path: "manage-users",
-        Component: ManageUsers
+        element: <AdminRoute>
+          <ManageUsers></ManageUsers>
+        </AdminRoute>
       },
       // {
       //   path: 'makeAdmin',
       //   element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
       // }
     ]
+  },
+  {
+    path: "/*",
+    Component: ErrorPage
   }
 ]);
