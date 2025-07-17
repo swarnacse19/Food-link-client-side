@@ -4,6 +4,7 @@ import { useLocation, useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { useMutation } from "@tanstack/react-query";
 
 const EditDonation = () => {
   const { state } = useLocation();
@@ -34,6 +35,29 @@ const EditDonation = () => {
     }
   }, [state, setValue]);
 
+  const { mutateAsync: updateDonation, isPending } = useMutation({
+    mutationFn: async (updatedData) => {
+      const res = await axiosSecure.patch(`/donations/${id}`, updatedData);
+      return res.data;
+    },
+    onSuccess: (res) => {
+      if (res.modifiedCount > 0) {
+        Swal.fire({
+          icon: "success",
+          title: "Updated!",
+          text: "Donation Info successfully updated",
+        }).then(() => {
+          navigate("/dashboard/my-donations");
+        });
+      } else {
+        Swal.fire("No changes made", "", "info");
+      }
+    },
+    onError: () => {
+      Swal.fire("Error", "Failed to update donation", "error");
+    }
+  });
+
   const onSubmit = async (data) => {
     const updatedDonation = {
       title: data.title,
@@ -47,20 +71,7 @@ const EditDonation = () => {
       imageUrl: imageURL,
     };
 
-    try {
-      const res = await axiosSecure.patch(`/donations/${id}`, updatedDonation);
-      if (res.data.modifiedCount > 0) {
-        Swal.fire({
-          icon: "success",
-          title: "Updated!",
-          text: "Donation successfully updated",
-        }).then(() => {
-          navigate("/dashboard/my-donations");
-        });
-      }
-    } catch (err) {
-      Swal.fire("Error", "Failed to update donation", "error");
-    }
+    await updateDonation(updatedDonation);
   };
 
   const handleImageUpload = async (e) => {
@@ -85,7 +96,6 @@ const EditDonation = () => {
     <div className="text-black font-medium max-w-xl mx-auto">
       <h1 className="text-2xl font-bold mb-4 mt-6">Edit Donation</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        {/* All form fields (same as AddDonation but pre-filled) */}
         <div>
           <label className="label">Donation Title</label>
           <input
@@ -162,7 +172,7 @@ const EditDonation = () => {
         </div>
 
         <div>
-          <label className="label">Upload New Image (optional)</label>
+          <label className="label">Upload Food Image</label>
           <input
             type="file"
             accept="image/*"
@@ -171,8 +181,12 @@ const EditDonation = () => {
           />
         </div>
 
-        <button type="submit" className="btn bg-[#FF8C42] w-full font-semibold">
-          Update Donation
+        <button
+          type="submit"
+          disabled={isPending}
+          className="btn bg-[#FF8C42] w-full font-semibold"
+        >
+          {isPending ? "Updating..." : "Update Donation"}
         </button>
       </form>
     </div>

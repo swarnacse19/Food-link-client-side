@@ -15,7 +15,7 @@ function SocialLogin() {
   signInWithGoogle()
     .then(async (result) => {
       const loggedInUser = result.user;
-      console.log(loggedInUser.uid);
+      //console.log(loggedInUser.uid);
 
       const userInfo = {
         email: loggedInUser.email,

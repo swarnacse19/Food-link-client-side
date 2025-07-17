@@ -19,7 +19,7 @@ function Login() {
   const onSubmit = (data) => {
     signIn(data.email, data.password)
       .then((result) => {
-        console.log(result.user.uid);
+        //console.log(result.user.uid);
         toast.success("Login Successfully!");
         setTimeout(
           () => navigate(`${location.state ? location.state : "/"}`),
