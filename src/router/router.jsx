@@ -14,6 +14,8 @@ import AdminRoute from "../routes/AdminRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import RestaurantRoute from "../routes/RestaurantRoute";
 import AddDonation from "../pages/Dashboard/RestaurantAccess/AddDonation";
+import MyDonations from "../pages/Dashboard/RestaurantAccess/MyDonations";
+import EditDonation from "../pages/Dashboard/RestaurantAccess/EditDonation";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +72,18 @@ export const router = createBrowserRouter([
         path: "add-donation",
         element: <RestaurantRoute>
           <AddDonation></AddDonation>
+        </RestaurantRoute>
+      },
+      {
+        path: "my-donations",
+        element: <RestaurantRoute>
+          <MyDonations></MyDonations>
+        </RestaurantRoute>
+      },
+      {
+        path: "edit-donation/:id",
+        element: <RestaurantRoute>
+          <EditDonation></EditDonation>
         </RestaurantRoute>
       }
     ]
