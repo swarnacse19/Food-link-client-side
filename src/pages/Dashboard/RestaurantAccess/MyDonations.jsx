@@ -61,18 +61,18 @@ function MyDonations() {
       <h2 className="text-2xl font-bold mb-4">My Donations</h2>
 
       {donations.map((donation) => (
-        <div key={donation._id} className="card shadow p-4 border">
+        <div key={donation._id} className="card shadow p-4 border font-medium text-neutral-500">
           <img
             src={donation.imageUrl}
             alt={donation.title}
-            className="h-52 object-cover rounded mb-4"
+            className="h-64 object-cover rounded mb-4"
           />
-          <h3 className="text-xl font-semibold">{donation.title}</h3>
+          <h3 className="text-2xl text-black font-semibold">{donation.title}</h3>
           <p>Food Type: {donation.foodType}</p>
           <p>Quantity: {donation.quantity}</p>
           <p>Restaurant: {donation.restaurantName}</p>
           <p>
-            Status: <span className="font-semibold">{donation.status}</span>
+            Status: <span className="font-bold">{donation.status}</span>
           </p>
           <div className="mt-3 flex gap-4">
             {donation.status !== "Rejected" && (
