@@ -32,6 +32,7 @@ function AddDonation() {
       imageUrl: imageURL,
       status: "Pending",
       created_at: new Date().toISOString(),
+      dStatus: "Available",
     };
 
     try {
