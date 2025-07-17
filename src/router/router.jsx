@@ -64,10 +64,6 @@ export const router = createBrowserRouter([
           <ManageUsers></ManageUsers>
         </AdminRoute>
       },
-      // {
-      //   path: 'makeAdmin',
-      //   element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
-      // }
     ]
   },
   {
