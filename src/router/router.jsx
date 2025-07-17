@@ -19,6 +19,7 @@ import EditDonation from "../pages/Dashboard/RestaurantAccess/EditDonation";
 import DonationStats from "../pages/Dashboard/RestaurantAccess/DonationStats";
 import ManageDonations from "../pages/Dashboard/AdminAccess/ManageDonations";
 import FeatureDonations from "../pages/Dashboard/AdminAccess/FeatureDonations";
+import CharityWrapper from "../pages/Dashboard/UserAccess/CharityWrapper";
 
 export const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ export const router = createBrowserRouter([
         element: <RestaurantRoute>
           <DonationStats></DonationStats>
         </RestaurantRoute>
+      },
+      {
+        path: "request-charity-role",
+        Component: CharityWrapper
       }
     ]
   },

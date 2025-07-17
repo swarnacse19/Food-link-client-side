@@ -31,14 +31,14 @@ const Featured = () => {
                 className="h-48 w-full object-cover"
               />
               <div className="p-4 space-y-2">
-                <h3 className="text-xl font-bold">{donation.title}</h3>
-                <p className="text-sm">Type: {donation.foodType}</p>
-                <p className="text-sm">Restaurant: {donation.restaurantName}</p>
-                <p className="text-sm text-gray-600">
+                <h3 className="text-2xl font-bold">{donation.title}</h3>
+                <p className="text-lg">Type: {donation.foodType}</p>
+                <p className="text-lg">Restaurant: {donation.restaurantName}</p>
+                <p className="text-lg text-gray-600">
                   Location: {donation.location}
                 </p>
                 <p
-                  className={`text-xs font-semibold ${
+                  className={`text-lg font-semibold ${
                     donation.dStatus === "Available"
                       ? "text-green-600"
                       : "text-orange-500"
@@ -50,7 +50,7 @@ const Featured = () => {
                   to={`/donation-details/${donation._id}`}
                   className="btn px-5 mt-2 bg-orange-500 text-white"
                 >
-                  Details
+                  View Details
                 </Link>
               </div>
             </div>
