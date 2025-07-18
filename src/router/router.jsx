@@ -25,6 +25,7 @@ import ManageRoleRequest from "../pages/Dashboard/AdminAccess/ManageRoleRequest"
 import DonationDetails from "../pages/AllDonations/DonationDetails";
 import Favorites from "../pages/Dashboard/UserAccess/Favorites";
 import MyReviews from "../pages/Dashboard/UserAccess/MyReviews";
+import ManageRequest from "../pages/Dashboard/AdminAccess/ManageRequest";
 
 export const router = createBrowserRouter([
   {
@@ -99,6 +100,12 @@ export const router = createBrowserRouter([
         path: "role-requests",
         element: <AdminRoute>
           <ManageRoleRequest></ManageRoleRequest>
+        </AdminRoute>
+      },
+      {
+        path: "all-requests",
+        element: <AdminRoute>
+          <ManageRequest></ManageRequest>
         </AdminRoute>
       },
       {
