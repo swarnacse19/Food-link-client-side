@@ -20,7 +20,7 @@ const Featured = () => {
         <Loading></Loading>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-9">
-          {featured.map((donation) => (
+          {featured.slice(0, 4).map((donation) => (
             <div
               key={donation._id}
               className="rounded-xl overflow-hidden shadow-md border bg-white"
@@ -31,14 +31,14 @@ const Featured = () => {
                 className="h-48 w-full object-cover"
               />
               <div className="p-4 space-y-2">
-                <h3 className="text-2xl font-bold">{donation.title}</h3>
-                <p className="text-lg">Type: {donation.foodType}</p>
-                <p className="text-lg">Restaurant: {donation.restaurantName}</p>
-                <p className="text-lg text-gray-600">
+                <h3 className="text-xl font-bold">{donation.title}</h3>
+                <p className="text-xs">Type: {donation.foodType}</p>
+                <p className="text-xs">Restaurant: {donation.restaurantName}</p>
+                <p className="text-xs text-gray-600">
                   Location: {donation.location}
                 </p>
                 <p
-                  className={`text-lg font-semibold ${
+                  className={`text-xs font-semibold ${
                     donation.dStatus === "Available"
                       ? "text-green-600"
                       : "text-orange-500"

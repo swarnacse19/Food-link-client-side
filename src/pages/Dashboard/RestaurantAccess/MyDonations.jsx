@@ -57,7 +57,7 @@ function MyDonations() {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="max-w-5xl mx-auto mt-10 space-y-6">
+    <div className="max-w-3xl mx-auto mt-10 space-y-6">
       <h2 className="text-2xl font-bold mb-4">My Donations</h2>
 
       {donations.map((donation) => (
