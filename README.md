@@ -1,12 +1,39 @@
-# React + Vite
+# Local Food Waste Reduction Platform – Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Website Name - FoodLink
 
-Currently, two official plugins are available:
+## Live Site
+[🔗 Live Site URL](https://your-client-deployment-url.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Admin Login
+- **Email:** shaida@gmail.com
+- **Password:** A@1234
 
-## Expanding the ESLint configuration
+## Overview
+This is the frontend (React) of the Local Food Waste Reduction Platform. It provides a user-friendly interface for Users, Charities, Restaurants, and Admins to interact with donations, manage roles, and perform tasks based on their access levels.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+- React
+- React Router
+- Tailwind CSS
+- TanStack Query (React Query)
+- Firebase Authentication
+- Stripe (for payments)
+- Axios
+- SweetAlert2 & React Toastify
+- Recharts
+
+## Features
+- 🔒 Role-based authentication & private routing
+- 🏠 Responsive Home Page with Featured Donations, Latest Requests & Impact Stats
+- 🍽️ All Donations Page for browsing verified food donations
+- 🔍 Donation Details Page with save/request/review functionality
+- ⭐ Save to Favorites & View My Favorites
+- 💳 Stripe integration for Charity Role requests
+- 📅 View transaction history of Charity role payments
+- 📦 Restaurant dashboard to add, update, delete and manage donations
+- 📝 Charity dashboard to request, pick up, confirm & review donations
+- 👩‍💼 Admin dashboard to manage users, donations, role requests & charity requests
+- 📊 Responsive design for all devices
+
+
