@@ -22,6 +22,7 @@ import FeatureDonations from "../pages/Dashboard/AdminAccess/FeatureDonations";
 import CharityWrapper from "../pages/Dashboard/UserAccess/CharityWrapper";
 import CharityTransactions from "../pages/Dashboard/UserAccess/CharityTransactions";
 import ManageRoleRequest from "../pages/Dashboard/AdminAccess/ManageRoleRequest";
+import DonationDetails from "../pages/AllDonations/DonationDetails";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ export const router = createBrowserRouter([
           path: "allDonations",
           element: <PrivateRoute>
             <AllDonations></AllDonations>
+          </PrivateRoute>
+        },
+        {
+          path: "donation-details/:id",
+          element: <PrivateRoute>
+            <DonationDetails></DonationDetails>
           </PrivateRoute>
         }
     ]
