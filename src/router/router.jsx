@@ -23,6 +23,7 @@ import CharityWrapper from "../pages/Dashboard/UserAccess/CharityWrapper";
 import CharityTransactions from "../pages/Dashboard/UserAccess/CharityTransactions";
 import ManageRoleRequest from "../pages/Dashboard/AdminAccess/ManageRoleRequest";
 import DonationDetails from "../pages/AllDonations/DonationDetails";
+import Favorites from "../pages/Dashboard/UserAccess/Favorites";
 
 export const router = createBrowserRouter([
   {
@@ -130,6 +131,10 @@ export const router = createBrowserRouter([
       {
         path: "transactions",
         Component: CharityTransactions
+      },
+      {
+        path: "favorites",
+        Component: Favorites
       }
     ]
   },
