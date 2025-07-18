@@ -91,6 +91,7 @@ const DonationDetails = () => {
     mutationFn: async () => {
       await axiosSecure.patch(`/donation-requests/${id}`, {
         status: "Picked Up",
+        charityEmail: user.email,
       });
     },
     onSuccess: () => {
