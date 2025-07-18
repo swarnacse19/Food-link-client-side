@@ -44,6 +44,11 @@ const AllDonations = () => {
                 <p className="text-sm">
                   <strong>Restaurant:</strong> {donation.restaurantName}
                 </p>
+                {donation.charityName && (
+                  <p className="text-sm">
+                    <strong>Assigned to:</strong> {donation.charityName}
+                  </p>
+                )}
                 <p className="text-sm text-gray-600">
                   <strong>Location:</strong> {donation.location}
                 </p>

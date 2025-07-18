@@ -31,13 +31,13 @@ const LatestCharityRequests = () => {
               />
               <div>
                 <p className="font-semibold">{req.charityName}</p>
-                <p className="text-xs text-gray-500">{req.charityEmail}</p>
+                <p className="text-lg text-gray-500">{req.charityEmail}</p>
               </div>
             </div>
-            <h4 className="font-bold text-sm text-gray-700">
+            <h4 className="font-bold text-xl text-gray-700">
               Donation: {req.donationTitle}
             </h4>
-            <p className="text-sm mt-2 text-gray-600">{req.description}</p>
+            <p className="text-lg mt-2 text-gray-600">{req.description}</p>
           </div>
         ))}
       </div>

@@ -182,7 +182,7 @@ const DonationDetails = () => {
 
       {role === "charity" &&
         assignedRequest?.charityEmail === user.email &&
-        assignedRequest.status === "Assigned" && (
+        assignedRequest.status === "Accepted" && (
           <button
             className="btn mt-4 bg-blue-600 text-white"
             onClick={() => confirmPickup.mutate()}
