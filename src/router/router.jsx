@@ -24,6 +24,7 @@ import CharityTransactions from "../pages/Dashboard/UserAccess/CharityTransactio
 import ManageRoleRequest from "../pages/Dashboard/AdminAccess/ManageRoleRequest";
 import DonationDetails from "../pages/AllDonations/DonationDetails";
 import Favorites from "../pages/Dashboard/UserAccess/Favorites";
+import MyReviews from "../pages/Dashboard/UserAccess/MyReviews";
 
 export const router = createBrowserRouter([
   {
@@ -135,6 +136,10 @@ export const router = createBrowserRouter([
       {
         path: "favorites",
         Component: Favorites
+      },
+      {
+        path: "my-reviews",
+        Component: MyReviews
       }
     ]
   },
