@@ -11,6 +11,7 @@ import Forbidden from "../pages/Forbidden";
 import Profile from "../pages/Dashboard/Profile";
 import ManageUsers from "../pages/Dashboard/AdminAccess/ManageUsers";
 import AdminRoute from "../routes/AdminRoute";
+import CharityRoute from "../routes/CharityRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import RestaurantRoute from "../routes/RestaurantRoute";
 import AddDonation from "../pages/Dashboard/RestaurantAccess/AddDonation";
@@ -27,6 +28,7 @@ import Favorites from "../pages/Dashboard/UserAccess/Favorites";
 import MyReviews from "../pages/Dashboard/UserAccess/MyReviews";
 import ManageRequest from "../pages/Dashboard/AdminAccess/ManageRequest";
 import RequestedDonations from "../pages/Dashboard/RestaurantAccess/RequestedDonations";
+import MyRequests from "../pages/Dashboard/CharityAccess/MyRequests";
 
 export const router = createBrowserRouter([
   {
@@ -154,6 +156,12 @@ export const router = createBrowserRouter([
       {
         path: "my-reviews",
         Component: MyReviews
+      },
+      {
+        path: "my-requests",
+        element: <CharityRoute>
+          <MyRequests></MyRequests>
+        </CharityRoute>
       }
     ]
   },
