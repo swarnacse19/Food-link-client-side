@@ -24,7 +24,7 @@ const ManageRequest = () => {
   // Delete request mutation
   const deleteRequest = useMutation({
     mutationFn: async (id) => {
-      await axiosSecure.delete(`/donation-requests/${id}`);
+      await axiosSecure.delete(`/donation-requests/${id}/admin`);
     },
     onSuccess: () => {
       toast.success("Request deleted");
