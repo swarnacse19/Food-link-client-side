@@ -2,9 +2,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import food1 from "../../assets/food6.jpg";
+import food1 from "../../assets/meat.jpg";
 import food2 from "../../assets/food7.jpg";
-import foodw from "../../assets/foodw.webp";
+import foodw from "../../assets/foodegg.jpg";
+import { Link } from "react-router";
 
 const MissionSlider = () => {
   const missions = [
@@ -40,16 +41,21 @@ const MissionSlider = () => {
         {missions.map((mission, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className="relative w-full h-[550px] bg-center bg-cover flex items-center justify-center px-4"
+              className="relative w-full min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] bg-center bg-cover flex items-center justify-center px-4"
               style={{ backgroundImage: `url(${mission.image})` }}
             >
-              <div className="text-white max-w-3xl text-center">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/30"></div>
+
+              {/* Text content */}
+              <div className="relative text-white max-w-3xl text-center">
                 <h3 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
                   {mission.title}
                 </h3>
                 <p className="text-lg md:text-xl font-semibold drop-shadow-md">
                   {mission.description}
                 </p>
+                {/* <Link to="/available" className="btn mx-10  bg-orange-500 font-semibold mt-5">Available Now</Link> */}
               </div>
             </div>
           </SwiperSlide>

@@ -35,7 +35,7 @@ const ImpactStats = () => {
 
         {/* Meals Saved */}
         <div className="bg-white shadow p-6 rounded-lg">
-          <h3 className="text-4xl font-bold text-green-600">
+          <h3 className="text-4xl font-bold text-orange-500">
             <CountUp end={mealsSaved} duration={2} />
           </h3>
           <p className="text-lg mt-2 font-medium">Meals Saved</p>
@@ -43,7 +43,7 @@ const ImpactStats = () => {
 
         {/* CO2 Saved */}
         <div className="bg-white shadow p-6 rounded-lg">
-          <h3 className="text-4xl font-bold text-blue-600">
+          <h3 className="text-4xl font-bold text-orange-500">
             <CountUp end={co2Saved} duration={2} /> kg
           </h3>
           <p className="text-lg mt-2 font-medium">CO₂ Emissions Prevented</p>

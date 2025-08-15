@@ -30,7 +30,7 @@ function Navbar() {
     </>
   );
   return (
-    <div className="navbar bg-orange-50 font-medium shadow-sm py-4 px-2 md:px-10">
+    <div className="navbar bg-orange-200 sticky top-0 left-0 w-full z-50 font-medium shadow-sm py-2 px-2 md:px-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

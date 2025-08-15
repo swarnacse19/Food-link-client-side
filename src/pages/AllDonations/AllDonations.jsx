@@ -7,17 +7,23 @@ import useAxios from "../../hooks/useAxios";
 const AllDonations = () => {
   const axiosInstance = useAxios();
 
-  const [inputValue, setInputValue] = useState("");         // For typing in input
+  const [inputValue, setInputValue] = useState(""); // For typing in input
   const [locationSearch, setLocationSearch] = useState(""); // Actual query trigger
-  const [sortBy, setSortBy] = useState("");                 // Sort option
+  const [sortBy, setSortBy] = useState(""); // Sort option
 
-  const { data: donations = [], isLoading, refetch } = useQuery({
+  const {
+    data: donations = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["allVerifiedDonations", locationSearch, sortBy],
     queryFn: async () => {
       const params = new URLSearchParams();
       if (locationSearch) params.append("location", locationSearch);
       if (sortBy) params.append("sort", sortBy);
-      const res = await axiosInstance.get(`/donations/verified?${params.toString()}`);
+      const res = await axiosInstance.get(
+        `/donations/verified?${params.toString()}`
+      );
       return res.data;
     },
   });
@@ -55,7 +61,7 @@ const AllDonations = () => {
           <option value="pickupTime">Pickup Time</option>
         </select>
         <button type="submit" className="btn bg-orange-500 text-white">
-          Apply
+          Search
         </button>
       </form>
 
@@ -67,41 +73,43 @@ const AllDonations = () => {
           {donations.map((donation) => (
             <div
               key={donation._id}
-              className="bg-white rounded-xl shadow-md border overflow-hidden"
+              className="bg-white rounded-xl shadow-md border overflow-hidden flex flex-col"
             >
               <img
                 src={donation.imageUrl}
                 alt={donation.title}
                 className="h-48 w-full object-cover"
               />
-              <div className="p-4 space-y-2">
-                <h3 className="text-xl font-bold">{donation.title}</h3>
-                <p className="text-sm">Type: {donation.foodType}</p>
-                <p className="text-sm font-semibold">
-                  Quantity: {donation.quantity}
-                </p>
-                <p className="text-sm">
-                  <strong>Restaurant:</strong> {donation.restaurantName}
-                </p>
-                {donation.charityName && (
-                  <p className="text-sm">
-                    <strong>Assigned to:</strong> {donation.charityName}
+              <div className="p-4 flex flex-col flex-grow">
+                <div className="space-y-2 flex-grow">
+                  <h3 className="text-xl font-bold">{donation.title}</h3>
+                  <p className="text-sm">Type: {donation.foodType}</p>
+                  <p className="text-sm font-semibold">
+                    Quantity: {donation.quantity}
                   </p>
-                )}
-                <p className="text-sm text-gray-600">
-                  <strong>Location:</strong> {donation.location}
-                </p>
-                <p
-                  className={`text-sm font-semibold ${
-                    donation.dStatus === "Available"
-                      ? "text-green-600"
-                      : donation.dStatus === "Requested"
-                      ? "text-orange-500"
-                      : "text-blue-600"
-                  }`}
-                >
-                  Status: {donation.dStatus}
-                </p>
+                  <p className="text-sm">
+                    <strong>Restaurant:</strong> {donation.restaurantName}
+                  </p>
+                  {donation.charityName && (
+                    <p className="text-sm">
+                      <strong>Assigned to:</strong> {donation.charityName}
+                    </p>
+                  )}
+                  <p className="text-sm text-gray-600">
+                    <strong>Location:</strong> {donation.location}
+                  </p>
+                  <p
+                    className={`text-sm font-semibold ${
+                      donation.dStatus === "Available"
+                        ? "text-green-600"
+                        : donation.dStatus === "Requested"
+                        ? "text-orange-500"
+                        : "text-blue-600"
+                    }`}
+                  >
+                    Status: {donation.dStatus}
+                  </p>
+                </div>
 
                 <Link
                   to={`/donation-details/${donation._id}`}
