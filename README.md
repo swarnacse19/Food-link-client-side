@@ -37,3 +37,34 @@ This is the frontend (React) of the Local Food Waste Reduction Platform. It prov
 - 📊 Responsive design for all devices
 
 
+### 🚀 Getting Started
+
+To get the project up and running on your local machine, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/swarnacse19/Food-link-client-side.git
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd Food-link-client-side
+    ```
+
+3.  **Install the dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Create a `.env` file:**
+    In the root of the project, create a file named `.env` and add your Firebase, Stripe, and any other necessary API keys.
+    ```env
+    VITE_API_KEY=your_firebase_api_key
+
+5.  **Run the project:**
+    Start the development server with this command:
+    ```bash
+    npm run dev
+    ```
+
+The project will now be live at `http://localhost:5173`.
