@@ -14,16 +14,16 @@ const Featured = () => {
   });
 
   return (
-    <section className="my-16 px-4 max-w-11/12 mx-auto">
-      <h2 className="text-3xl font-bold mb-9 text-center"> Featured Donations</h2>
+    <section className="py-28 px-4 md:px-10 mx-auto">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-14 text-orange-500 text-center"> Featured Donations</h2>
       {isLoading ? (
         <Loading></Loading>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-9">
-          {featured.slice(0, 4).map((donation) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9">
+          {featured.slice(0, 8).map((donation) => (
             <div
               key={donation._id}
-              className="rounded-xl overflow-hidden shadow-md border bg-white"
+              className="rounded-xl overflow-hidden shadow-md bg-orange-100 border border-gray-200"
             >
               <img
                 src={donation.imageUrl}

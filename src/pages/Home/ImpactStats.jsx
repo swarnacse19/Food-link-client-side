@@ -22,7 +22,7 @@ const ImpactStats = () => {
   const co2Saved = Math.round(totalQuantity * 2.5);
 
   return (
-    <section className="bg-[#fef9f5] max-w-11/12 mx-auto py-10 px-4 my-12 text-center">
+    <section className="max-w-11/12 mx-auto py-10 px-4 my-12 text-center">
       <h2 className="text-3xl font-bold mb-8">Our Impact</h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {/* Total Food Donated */}

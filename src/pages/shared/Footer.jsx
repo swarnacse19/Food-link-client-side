@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTwitter, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { FaLinkedin, FaPhoneAlt, FaGithub } from "react-icons/fa";
 import { IoLogoFacebook } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
@@ -29,12 +29,12 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:underline">
+              <Link to="/contact" className="hover:underline">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:underline">
+              <Link to="/terms" className="hover:underline">
                 Terms & Conditions
               </Link>
             </li>
@@ -44,13 +44,13 @@ function Footer() {
         <div>
           <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="">
-              <FaTwitter size={24} />
+            <a href="https://github.com/swarnacse19" className="">
+              <FaGithub size={24} />
             </a>
-            <a href="#" className="">
+            <a href="https://www.linkedin.com/in/shaida-khanom-sharna/" className="">
               <FaLinkedin size={24} />
             </a>
-            <a href="#" className="">
+            <a href="https://www.facebook.com/shaidakhanom.sharna" className="">
               <IoLogoFacebook size={24} />
             </a>
           </div>

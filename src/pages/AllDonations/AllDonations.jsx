@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading/Loading";
 import { Link } from "react-router";
 import useAxios from "../../hooks/useAxios";
+import image from "../../assets/bg.png";
 
 const AllDonations = () => {
   const axiosInstance = useAxios();
@@ -36,7 +37,7 @@ const AllDonations = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="my-10 px-4 max-w-6xl mx-auto">
+    <section className="py-10 px-4 md:px-10 mx-auto" style={{ backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(254, 163, 1, 0.1) 100%), url(${image})` }}>
       <h2 className="text-3xl font-bold text-center mb-6">All Donations</h2>
 
       {/* Search and Sort Controls */}
@@ -69,11 +70,11 @@ const AllDonations = () => {
       {donations.length === 0 ? (
         <p className="text-center text-gray-500">No donations found.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {donations.map((donation) => (
             <div
               key={donation._id}
-              className="bg-white rounded-xl shadow-md border overflow-hidden flex flex-col"
+              className="bg-orange-50 border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col"
             >
               <img
                 src={donation.imageUrl}
