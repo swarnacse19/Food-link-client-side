@@ -25,8 +25,13 @@ function Navbar() {
         <NavLink to="/allDonations">All Donations</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/about">About Us</NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink to="/dashboard">Dashboard</NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -84,13 +89,13 @@ function Navbar() {
             )}
             <button
               onClick={handleLogout}
-              className="btn bg-white border-2 border-[#FF8C42]"
+              className="w-24 px-4 py-1 rounded-sm font-semibold hover:bg-orange-400 border-2 border-[#FF8C42]"
             >
               Logout
             </button>
           </>
         ) : (
-          <Link to="/login" className="btn bg-white border-2 border-[#FF8C42]">
+          <Link to="/login" className="w-24 px-4 py-1 rounded-sm font-semibold hover:bg-orange-400 border-2 border-[#FF8C42]">
             Sign In
           </Link>
         )}
