@@ -32,6 +32,7 @@ import MyRequests from "../pages/Dashboard/CharityAccess/MyRequests";
 import MyPickups from "../pages/Dashboard/CharityAccess/MyPickups";
 import ReceivedDonations from "../pages/Dashboard/CharityAccess/ReceivedDonations";
 import AboutUs from "../pages/AboutUs";
+import ContactSection from "../pages/ContactSection";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
         {
           path: "/about",
           element: <AboutUs></AboutUs>
+        },
+        {
+          path: "/contact",
+          element: <ContactSection></ContactSection>
         }
     ]
   },

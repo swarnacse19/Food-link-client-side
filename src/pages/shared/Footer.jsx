@@ -16,7 +16,7 @@ function Footer() {
           </div>
           <div className="flex gap-2 items-center">
             <MdEmail />
-            <p>Email: swarna.bu11@gmail.com</p>
+            <p>Email: foodlink.bd@gmail.com</p>
           </div>
         </div>
 
