@@ -38,7 +38,7 @@ const AllDonations = () => {
 
   return (
     <section className="py-10 px-4 md:px-10 mx-auto" style={{ backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(254, 163, 1, 0.1) 100%), url(${image})` }}>
-      <h2 className="text-3xl font-bold text-center mb-6">All Donations</h2>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl text-orange-500 font-bold text-center mb-6">All Donations</h2>
 
       {/* Search and Sort Controls */}
       <form
