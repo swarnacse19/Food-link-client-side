@@ -13,37 +13,30 @@ const Community = () => {
   {
     id: 1,
     text: "Thanks to this platform, our restaurant donates meals daily instead of wasting them. It’s heartwarming to know our food is reaching people who truly need it.",
-    name: "Rashi Ahamed",
+    name: "Rashida Ahamed",
     title: "Restaurant Manager",
-    avatar: "https://i.ibb.co/jv81Z19r/girl1.jpg",
+    avatar: "https://i.ibb.co.com/LdVH3tnP/hijab1.jpg",
   },
   {
     id: 2,
-    text: "This initiative has transformed how we serve our community. Regular food donations have allowed us to support dozens of families with fresh meals every week.",
-    name: "Arpa Hossain",
-    title: "Charity Organizer",
-    avatar: "https://i.ibb.co/LXxHXP5g/girl2.jpg",
+    text: "We've partnered with several local restaurants through this program. Their contributions help us feed the homeless population in our area every single night.",
+    name: "Nadia Ahmed",
+    title: "Non-Profit Director",
+    avatar: "https://i.ibb.co.com/MydfMNW3/hijab2.jpg",
   },
   {
     id: 3,
-    text: "We’ve partnered with several local restaurants through this program. Their contributions help us feed the homeless population in our area every single night.",
-    name: "Nasira Mira",
-    title: "Non-Profit Director",
-    avatar: "https://i.ibb.co/v6TrY4pZ/girl3.jpg",
+    text: "Instead of throwing away perfectly good food, we now donate it to shelters nearby. It's a small act from us, but it creates a huge impact.",
+    name: "Tanjila Ahsan",
+    title: "Café Owner",
+    avatar: "https://i.ibb.co.com/TnxG96q/hijab3.jpg",
   },
   {
     id: 4,
-    text: "Instead of throwing away perfectly good food, we now donate it to shelters nearby. It’s a small act from us, but it creates a huge impact.",
-    name: "Janne Doe",
-    title: "Café Owner",
-    avatar: "https://i.ibb.co/Pz4MMyKD/student3.webp",
-  },
-  {
-    id: 5,
     text: "Being part of this donation network helped us connect with people and causes we never imagined. Giving food is now part of our kitchen routine.",
-    name: "John Smitha",
+    name: "Jui Hasan",
     title: "Restaurant Chef",
-    avatar: "https://i.ibb.co/bjfz1Dv4/student1.jpg",
+    avatar: "https://i.ibb.co.com/KzpP8R82/hijab4.jpg",
   },
 ];
 
@@ -98,16 +91,16 @@ const Community = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">Community Stories</h2>
+    <section className="py-20 px-4 md:px-10 mx-auto">
+      <div className="container">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-14 text-orange-500 text-center">Community Stories</h2>
 
         <div className="">
           <Slider ref={sliderRef} {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={testimonial.id} className="p-2 outline-none">
                 <Card
-                  className={`shadow-xl p-6 bg-white testimonial-card`}
+                  className={`shadow-xl p-6 testimonial-card`}
                 >
                   <Card.Body className="p-0">
                     <p className="text-left text-gray-700 text-lg mb-6 relative">
@@ -117,9 +110,7 @@ const Community = () => {
                       <Avatar
                         src={testimonial.avatar}
                         alt={`${testimonial.name}'s avatar`}
-                        shape="circle"
-                        size="lg"
-                        className="mr-4 w-16"
+                        className="w-16 h-16 object-cover mr-4"
                       />
                       <div className="text-left">
                         <h4 className="text-lg font-semibold text-gray-800">{testimonial.name}</h4>

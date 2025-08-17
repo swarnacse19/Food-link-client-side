@@ -7,6 +7,7 @@ import LatestCharityRequests from "./LatestCharityRequest";
 import image from "../../assets/bg.png";
 import RecentDonations from "../RecentDonations";
 import Categories from "../Categories";
+import HowToGet from "../HowToGet";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <Featured></Featured>
         <RecentDonations></RecentDonations>
         <Categories></Categories>
+        <HowToGet></HowToGet>
         <LatestCharityRequests></LatestCharityRequests>
         <ImpactStats></ImpactStats>
         <Community></Community>
