@@ -33,6 +33,7 @@ import MyPickups from "../pages/Dashboard/CharityAccess/MyPickups";
 import ReceivedDonations from "../pages/Dashboard/CharityAccess/ReceivedDonations";
 import AboutUs from "../pages/AboutUs";
 import ContactSection from "../pages/ContactSection";
+import TermsAndConditions from "../pages/TermsAndConditiions";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
         {
           path: "/contact",
           element: <ContactSection></ContactSection>
+        },
+        {
+          path: "/terms",
+          element: <TermsAndConditions></TermsAndConditions>
         }
     ]
   },
