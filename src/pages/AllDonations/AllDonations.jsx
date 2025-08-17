@@ -8,9 +8,9 @@ import image from "../../assets/bg.png";
 const AllDonations = () => {
   const axiosInstance = useAxios();
 
-  const [inputValue, setInputValue] = useState(""); // For typing in input
-  const [locationSearch, setLocationSearch] = useState(""); // Actual query trigger
-  const [sortBy, setSortBy] = useState(""); // Sort option
+  const [inputValue, setInputValue] = useState(""); 
+  const [locationSearch, setLocationSearch] = useState(""); 
+  const [sortBy, setSortBy] = useState(""); 
 
   const {
     data: donations = [],
@@ -57,8 +57,9 @@ const AllDonations = () => {
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
         >
-          <option value="">Sort by</option>
-          <option value="quantity">Quantity</option>
+          <option value="">All</option>
+          <option value="quantityA">Quantity(Ascending)</option>
+          <option value="quantityD">Quantity(Descending)</option>
           <option value="pickupTime">Pickup Time</option>
         </select>
         <button type="submit" className="btn bg-orange-500 text-white">
