@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: `https://food-donation-server-side-chi.vercel.app`,
+  baseURL: `http://localhost:5000`,
 });
 
 const useAxios = () => {

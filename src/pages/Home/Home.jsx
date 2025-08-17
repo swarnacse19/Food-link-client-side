@@ -5,6 +5,7 @@ import ImpactStats from "./ImpactStats";
 import Community from "./Community";
 import LatestCharityRequests from "./LatestCharityRequest";
 import image from "../../assets/bg.png";
+import RecentDonations from "../RecentDonations";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <MissionSlider></MissionSlider>
       <section style={{ backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(254, 163, 1, 0.1) 100%), url(${image})` }}>
         <Featured></Featured>
+        <RecentDonations></RecentDonations>
         <LatestCharityRequests></LatestCharityRequests>
         <ImpactStats></ImpactStats>
         <Community></Community>
