@@ -51,47 +51,56 @@ function MyDonations() {
   };
 
   const handleUpdateRedirect = (donation) => {
-    navigate(`/dashboard/edit-donation/${donation._id}`, { state: { donation } });
+    navigate(`/dashboard/edit-donation/${donation._id}`, {
+      state: { donation },
+    });
   };
 
   if (isLoading) return <Loading />;
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 space-y-6">
+    <div className="px-4 md:px-10 mx-auto mt-10 space-y-6">
       <h2 className="text-2xl font-bold mb-4">My Donations</h2>
 
-      {donations.map((donation) => (
-        <div key={donation._id} className="card shadow p-4 border font-medium text-neutral-500">
-          <img
-            src={donation.imageUrl}
-            alt={donation.title}
-            className="h-64 object-cover rounded mb-4"
-          />
-          <h3 className="text-2xl text-black font-semibold">{donation.title}</h3>
-          <p>Food Type: {donation.foodType}</p>
-          <p>Quantity: {donation.quantity}</p>
-          <p>Restaurant: {donation.restaurantName}</p>
-          <p>
-            Status: <span className="font-bold">{donation.status}</span>
-          </p>
-          <div className="mt-3 flex gap-4">
-            {donation.status !== "Rejected" && (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {donations.map((donation) => (
+          <div
+            key={donation._id}
+            className="card shadow bg-orange-50 p-4 font-medium text-neutral-500"
+          >
+            <img
+              src={donation.imageUrl}
+              alt={donation.title}
+              className="h-48 w-full object-cover rounded mb-4"
+            />
+            <h3 className="text-2xl text-black font-semibold">
+              {donation.title}
+            </h3>
+            <p>Food Type: {donation.foodType}</p>
+            <p>Quantity: {donation.quantity}</p>
+            <p>Restaurant: {donation.restaurantName}</p>
+            <p>
+              Status: <span className="font-bold">{donation.status}</span>
+            </p>
+            <div className="mt-3 flex gap-4">
+              {donation.status !== "Rejected" && (
+                <button
+                  onClick={() => handleUpdateRedirect(donation)}
+                  className="btn bg-green-700 text-white"
+                >
+                  Update
+                </button>
+              )}
               <button
-                onClick={() => handleUpdateRedirect(donation)}
-                className="btn bg-green-700 text-white"
+                onClick={() => handleDelete(donation._id)}
+                className="btn bg-red-600 text-white"
               >
-                Update
+                Delete
               </button>
-            )}
-            <button
-              onClick={() => handleDelete(donation._id)}
-              className="btn bg-red-600 text-white"
-            >
-              Delete
-            </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

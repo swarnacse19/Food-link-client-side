@@ -103,6 +103,11 @@ function AddDonation() {
             <option value="Produce">Produce</option>
             <option value="Cooked">Cooked</option>
             <option value="Canned">Canned</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Sandwich">Sandwich</option>
+            <option value="Burger">Burger</option>
           </select>
           {errors.foodType && (
             <p className="text-red-500">Food type is required</p>
@@ -191,7 +196,7 @@ function AddDonation() {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="btn bg-[#FF8C42] w-full font-semibold">
+        <button type="submit" className="btn bg-orange-600 text-white hover:bg-orange-700 w-full font-semibold">
           Add Donation
         </button>
       </form>

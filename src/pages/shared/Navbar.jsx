@@ -92,13 +92,13 @@ function Navbar() {
             )}
             <button
               onClick={handleLogout}
-              className="w-24 px-4 py-1 rounded-sm font-semibold hover:bg-orange-400 border-2 border-[#FF8C42]"
+              className="w-24 px-4 py-1 rounded-sm font-semibold text-orange-700 hover:bg-orange-400 hover:text-white border-3 border-[#FF8C42]"
             >
               Logout
             </button>
           </>
         ) : (
-          <Link to="/login" className="w-24 px-4 py-1 rounded-sm font-semibold hover:bg-orange-400 border-2 border-[#FF8C42]">
+          <Link to="/login" className="w-24 px-4 py-1 rounded-sm font-semibold text-orange-700 hover:bg-orange-400 hover:text-white border-3 border-[#FF8C42]">
             Sign In
           </Link>
         )}

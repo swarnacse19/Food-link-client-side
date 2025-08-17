@@ -112,6 +112,11 @@ const EditDonation = () => {
             <option value="Produce">Produce</option>
             <option value="Cooked">Cooked</option>
             <option value="Canned">Canned</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Sandwich">Sandwich</option>
+            <option value="Burger">Burger</option>
           </select>
         </div>
 
